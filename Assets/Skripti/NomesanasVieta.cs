@@ -9,6 +9,9 @@ public class NomesanasVieta : MonoBehaviour,
 	private Vector2 vietasIzm, velkObjIzm;
 	private float xIzmStarpiba, yIzmStarpiba;
 	public Objekti objektuSkripts;
+	//saglabas pievienoto masinu skaitu
+	public int CorrectCount;
+
 	public void OnDrop(PointerEventData eventData){
 		if (eventData.pointerDrag != null) {
 			if (eventData.pointerDrag.tag.Equals (tag)) {
@@ -33,6 +36,7 @@ public class NomesanasVieta : MonoBehaviour,
 					eventData.pointerDrag.GetComponent<RectTransform> ().localRotation = GetComponent<RectTransform> ().localRotation;
 					eventData.pointerDrag.GetComponent<RectTransform> ().localScale = GetComponent<RectTransform> ().localScale;
 
+					//atskano attiecigas masinas skanu
 					switch (eventData.pointerDrag.tag) {
 					case "atkritumi":
 						objektuSkripts.skanasAvots.PlayOneShot (objektuSkripts.skanasKoAtskanot [1]);
@@ -43,7 +47,33 @@ public class NomesanasVieta : MonoBehaviour,
 					case "buss":
 						objektuSkripts.skanasAvots.PlayOneShot (objektuSkripts.skanasKoAtskanot [3]);
 						break;
-
+					case "b2":
+						objektuSkripts.skanasAvots.PlayOneShot (objektuSkripts.skanasKoAtskanot [4]);
+						break;
+					case "cement":
+						objektuSkripts.skanasAvots.PlayOneShot (objektuSkripts.skanasKoAtskanot [8]);
+						break;
+					case "e46":
+						objektuSkripts.skanasAvots.PlayOneShot (objektuSkripts.skanasKoAtskanot [12]);
+						break;
+					case "e61":
+						objektuSkripts.skanasAvots.PlayOneShot (objektuSkripts.skanasKoAtskanot [11]);
+						break;
+					case "eskavators":
+						objektuSkripts.skanasAvots.PlayOneShot (objektuSkripts.skanasKoAtskanot [9]);
+						break;
+					case "policija":
+						objektuSkripts.skanasAvots.PlayOneShot (objektuSkripts.skanasKoAtskanot [5]);
+						break;
+					case "traktors1":
+						objektuSkripts.skanasAvots.PlayOneShot (objektuSkripts.skanasKoAtskanot [6]);
+						break;
+					case "traktors5":
+						objektuSkripts.skanasAvots.PlayOneShot (objektuSkripts.skanasKoAtskanot [7]);
+						break;
+					case "ugunsdzeseji":
+						objektuSkripts.skanasAvots.PlayOneShot (objektuSkripts.skanasKoAtskanot [10]);
+						break;
 					default:
 						Debug.Log ("Tags nav definets!");
 						break;
@@ -53,6 +83,7 @@ public class NomesanasVieta : MonoBehaviour,
 				objektuSkripts.vaiIstajaVieta = false;
 				objektuSkripts.skanasAvots.PlayOneShot (objektuSkripts.skanasKoAtskanot [0]);
 
+				//ja nepareizaja vieta tad attiecigo masinu aizsuta atpakal uz savu vietu
 				switch (eventData.pointerDrag.tag) {
 				case "atkritumi":
 					objektuSkripts.atkritumuMasina.GetComponent<RectTransform> ().localPosition = objektuSkripts.atkrMKoord;
@@ -62,6 +93,33 @@ public class NomesanasVieta : MonoBehaviour,
 					break;
 				case "buss":
 					objektuSkripts.autobuss.GetComponent<RectTransform> ().localPosition = objektuSkripts.bussKoord;
+					break;
+				case "b2":
+					objektuSkripts.b2.GetComponent<RectTransform> ().localPosition = objektuSkripts.b2Koord;
+					break;
+				case "cement":
+					objektuSkripts.cementaMasina.GetComponent<RectTransform> ().localPosition = objektuSkripts.cementaKoord;
+					break;
+				case "e46":
+					objektuSkripts.e46.GetComponent<RectTransform> ().localPosition = objektuSkripts.e46Koord;
+					break;
+				case "e61":
+					objektuSkripts.e61.GetComponent<RectTransform> ().localPosition = objektuSkripts.e61Koord;
+					break;
+				case "eskavators":
+					objektuSkripts.eskavators.GetComponent<RectTransform> ().localPosition = objektuSkripts.eskavatorsKoord;
+					break;
+				case "policija":
+					objektuSkripts.policija.GetComponent<RectTransform> ().localPosition = objektuSkripts.policijaKoord;
+					break;
+				case "traktors1":
+					objektuSkripts.traktors1.GetComponent<RectTransform> ().localPosition = objektuSkripts.traktors1Koord;
+					break;
+				case "traktors5":
+					objektuSkripts.traktors5.GetComponent<RectTransform> ().localPosition = objektuSkripts.traktors5Koord;
+					break;
+				case "ugunsdzeseji":
+					objektuSkripts.ugunsdzeseji.GetComponent<RectTransform> ().localPosition = objektuSkripts.ugunsdzesejiKoord;
 					break;
 
 				default:

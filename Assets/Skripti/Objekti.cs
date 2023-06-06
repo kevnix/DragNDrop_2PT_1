@@ -8,29 +8,10 @@ public class Objekti : MonoBehaviour {
 
 
 	[HideInInspector]
-	public Vector2 atkrMKoord;
+	public Vector2 atkrMKoord, atrPKoord, bussKoord;
 	[HideInInspector]
-	public Vector2 atrPKoord;
-	[HideInInspector]
-	public Vector2 bussKoord;
-	[HideInInspector]
-	public Vector2 b2Koord;
-	[HideInInspector]
-	public Vector2 cementaKoord;
-	[HideInInspector]
-	public Vector2 e46Koord;
-	[HideInInspector]
-	public Vector2 e61Koord;
-	[HideInInspector]
-	public Vector2 eskavatorsKoord;
-	[HideInInspector]
-	public Vector2 policijaKoord;
-	[HideInInspector]
-	public Vector2 traktors1Koord;
-	[HideInInspector]
-	public Vector2 traktors5Koord;
-	[HideInInspector]
-	public Vector2 ugunsdzesejiKoord;
+	public Vector2 b2Koord, cementaKoord, e46Koord, e61Koord, eskavatorsKoord, policijaKoord, traktors1Koord, traktors5Koord, ugunsdzesejiKoord;
+
 
 	public Canvas kanva;
 
