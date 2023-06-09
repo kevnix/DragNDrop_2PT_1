@@ -32,6 +32,7 @@ public class NomesanasVieta : MonoBehaviour,
 
 				if ((rotacijasStarpiba <= 6 || (rotacijasStarpiba >= 354 && rotacijasStarpiba <= 360)) && (xIzmStarpiba <= 0.1 && yIzmStarpiba <= 0.1)) {
 					Debug.Log ("Nomests pareizaja vieta");
+					objektuSkripts.vaiIstajaVieta = true;
 					eventData.pointerDrag.GetComponent<RectTransform> ().anchoredPosition = GetComponent<RectTransform> ().anchoredPosition;
 					eventData.pointerDrag.GetComponent<RectTransform> ().localRotation = GetComponent<RectTransform> ().localRotation;
 					eventData.pointerDrag.GetComponent<RectTransform> ().localScale = GetComponent<RectTransform> ().localScale;
