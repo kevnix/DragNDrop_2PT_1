@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Objekti : MonoBehaviour {
 	//pievienoju masinas objektus
 	public GameObject atkritumuMasina, atraPalidziba, autobuss, b2, cementaMasina, e46, e61, eskavators, policija, traktors1, traktors5, ugunsdzeseji;
+	//saglabas pievienoto masinu skaitu
+	private int CorrectCount;
 
 
 	[HideInInspector]
@@ -59,6 +62,18 @@ public class Objekti : MonoBehaviour {
 			traktors5.GetComponent<RectTransform>().localPosition;
 
 		ugunsdzesejiKoord =
-			ugunsdzeseji.GetComponent<RectTransform>().localPosition;
+			ugunsdzeseji.GetComponent<RectTransform> ().localPosition;
     }
+
+	//palielina noliktu masinu skaitu un parbauda vai ir vairak pa 12, ja ir tad parsledz ainu
+	public void AddCarCount(){
+		CorrectCount++;
+		if (CorrectCount>=12) {
+			Debug.Log ("finish!");
+			SceneManager.LoadScene (2, LoadSceneMode.Single);
+		}
+			Debug.Log ("carcount: " + CorrectCount);
+		
+
+	}
 }

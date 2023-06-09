@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 public class NomesanasVieta : MonoBehaviour, 
 	IDropHandler{
 	private float vietasZRot, velkObjZRot, rotacijasStarpiba;
 	private Vector2 vietasIzm, velkObjIzm;
 	private float xIzmStarpiba, yIzmStarpiba;
 	public Objekti objektuSkripts;
-	//saglabas pievienoto masinu skaitu
-	public int CorrectCount;
 
 	public void OnDrop(PointerEventData eventData){
 		if (eventData.pointerDrag != null) {
@@ -22,7 +21,7 @@ public class NomesanasVieta : MonoBehaviour,
 				rotacijasStarpiba = Mathf.Abs (vietasZRot - velkObjZRot);
 
 				vietasIzm = eventData.pointerDrag.GetComponent<RectTransform> ().localScale;
-				velkObjIzm = eventData.pointerDrag.GetComponent<RectTransform> ().localScale;
+				velkObjIzm = GetComponent<RectTransform> ().localScale;
 
 				xIzmStarpiba = Mathf.Abs (vietasIzm.x - velkObjIzm.x);
 				yIzmStarpiba = Mathf.Abs (vietasIzm.y - velkObjIzm.y);
@@ -32,6 +31,8 @@ public class NomesanasVieta : MonoBehaviour,
 
 				if ((rotacijasStarpiba <= 6 || (rotacijasStarpiba >= 354 && rotacijasStarpiba <= 360)) && (xIzmStarpiba <= 0.1 && yIzmStarpiba <= 0.1)) {
 					Debug.Log ("Nomests pareizaja vieta");
+					//izsauc metodi, kas palielina salikto masinu skaitu
+					objektuSkripts.AddCarCount();
 					objektuSkripts.vaiIstajaVieta = true;
 					eventData.pointerDrag.GetComponent<RectTransform> ().anchoredPosition = GetComponent<RectTransform> ().anchoredPosition;
 					eventData.pointerDrag.GetComponent<RectTransform> ().localRotation = GetComponent<RectTransform> ().localRotation;
@@ -127,10 +128,13 @@ public class NomesanasVieta : MonoBehaviour,
 					Debug.Log ("Tags nav definets!");
 					break;
 				}
+					
 
 			}
 		}
 
 	}
+
+
 
 }
