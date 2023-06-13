@@ -68,7 +68,7 @@ public class Objekti : MonoBehaviour {
 	//palielina noliktu masinu skaitu un parbauda vai ir vairak pa 12, ja ir tad parsledz ainu
 	public void AddCarCount(){
 		CorrectCount++;
-		if (CorrectCount>=12) {
+		if (CorrectCount>=2) {
 			Debug.Log ("finish!");
 			SceneManager.LoadScene (2, LoadSceneMode.Single);
 		}
