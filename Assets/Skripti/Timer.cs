@@ -27,15 +27,4 @@ public class Timer : MonoBehaviour {
 		//Debug.Log (taimeris);
 	}
 
-	//definé publisku teksta tipa mainígo, kas mums paradis taimeri
-	public Text timerText;
-
-	//metode kas parveido laiku formata hh:mm:ss
-	private string parveidotLaiku(float time){
-		int h = Mathf.FloorToInt (Timer.taimeris.currentTime / 3600);
-		int m = Mathf.FloorToInt ((Timer.taimeris.currentTime % 3600) / 60);
-		int s = Mathf.FloorToInt (Timer.taimeris.currentTime % 60);
-
-		return string.Format ("{0:00}:{1:00}:{2:00}", h, m, s);
-	}	
 }
